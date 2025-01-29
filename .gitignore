@@ -6,9 +6,6 @@ node_modules
 # Testing
 coverage
 
-# Production
-dist
-build
 
 # Misc
 .DS_Store
@@ -70,4 +67,3 @@ Downloads/
 Library/
 Music/
 Pictures/
-Public/
