@@ -1,64 +1,42 @@
 # Dependencies
-node_modules
-.pnp
+node_modules/
+.pnp/
 .pnp.js
 
-# Testing
-coverage
+# Build Output (Vite, Netlify)
+dist/
+.vite/
+.vitepress/
 
-
-# Misc
-.DS_Store
+# Environment Variables (Prevents API key leaks)
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.development
+.env.production
 .env*.local
 
-# Logs
+# Logs & Cache
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# TypeScript
+.idea/
+*.swp
 *.tsbuildinfo
 
-# Vite
-.vite
-# macOS system files
+# macOS System Files
 .DS_Store
 .Trash/
 .cache/
 .swiftpm/
-.viminfo
-.zsh_history
+.viminfo/
+.zsh_history/
 .zsh_sessions/
-.zshrc
-
-# Node.js & npm
-node_modules/
-.npm/
-.npmrc
-.npm-global/
-
-# VS Code & Editor Config
-.vscode/
-.idea/
-*.swp
+.zshrc/
 
 # Python & Docker
-.python_history
+.python_history/
 .docker/
 
 # Personal & OS Folders
@@ -67,3 +45,6 @@ Downloads/
 Library/
 Music/
 Pictures/
+
+# Netlify Functions (Ignore only local builds, not actual functions)
+.netlify/cache/
