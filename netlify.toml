@@ -2,6 +2,7 @@
   command = "npm install && npm install typescript && npx tsc && vite build"
   publish = "dist"
   functions = "netlify/functions"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
