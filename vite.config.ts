@@ -1,31 +1,29 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  base: "/", // Ensures correct base path
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-  optimizeDeps: {
-    include: ['dompurify'], // Ensure DOMPurify is pre-bundled
-  },
   build: {
+    outDir: "dist",
+    emptyOutDir: true,
     sourcemap: false,
-    minify: 'terser',
-    cssCodeSplit: false,
+    minify: "terser",
+    cssCodeSplit: true,
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"), // Ensures index.html is included in the build
+      },
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-query': ['@tanstack/react-query'],
-          'vendor-ui': ['lucide-react'],
-          'vendor-charts': ['chart.js', 'react-chartjs-2'],
-          'vendor-ai': ['openai'],
-          'vendor-security': ['dompurify', 'zod'],
-        },
+        assetFileNames: "assets/[name]-[hash][extname]",
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
       },
     },
   },
