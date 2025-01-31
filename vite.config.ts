@@ -1,9 +1,13 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
-
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+// import { ThemedButton } from "@/components/ThemedButton"; // Removed due to module not found error
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    tailwindcss(),
+    react()
+  ],
   base: "/", // Ensures correct base path
   resolve: {
     alias: {
